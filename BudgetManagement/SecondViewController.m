@@ -44,29 +44,26 @@
 
 #pragma mark Piker Views Data source methods
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView { //Note we have two picker Views, but in both of them, number of components is the same. The difference will be in the number of rows
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView { //Two picker views, with the same number of components (1), but different number of rows.
     return 1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
-    NSInteger numberOfRows;
+    NSInteger numberOfRows = 0;
     
     if (pickerView == self.NumberIncomePicker) {
-        numberOfRows = 15; //This is subjected to change.
+        numberOfRows = 20; // User is not expected to have more than 20 income sources.
     }
     
     if (pickerView == self.NumberExpensesPicker) {
-        numberOfRows = 50; //This is subjected to change too.
+        numberOfRows = 50;
     }
     
     return numberOfRows;
 }
 
-#pragma mark Picker Views Delegate methods
-
-//For now I just want to make sure taht the provided number of rows for each picker is correct, so I`m going to give number rows from 0 to i (where i = number of rows - 1). Actually I did count them and they are correct.
-
+//
 
 
 - (IBAction)InitiliseTableButton:(UIButton *)sender {

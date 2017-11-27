@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2AD08AD1FC59485000C2122 /* InitilisedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AD08AC1FC59485000C2122 /* InitilisedTableView.m */; };
+		D2AD08B01FC6288D000C2122 /* TableViewSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AD08AF1FC6288D000C2122 /* TableViewSettings.m */; };
 		D2F604F51FBE7A9900C8B217 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F604F41FBE7A9900C8B217 /* AppDelegate.m */; };
 		D2F604F81FBE7A9900C8B217 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F604F71FBE7A9900C8B217 /* ViewController.m */; };
 		D2F604FB1FBE7A9900C8B217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F604F91FBE7A9900C8B217 /* Main.storyboard */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D2AD08AB1FC59485000C2122 /* InitilisedTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitilisedTableView.h; sourceTree = "<group>"; };
+		D2AD08AC1FC59485000C2122 /* InitilisedTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitilisedTableView.m; sourceTree = "<group>"; };
+		D2AD08AE1FC6288D000C2122 /* TableViewSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewSettings.h; sourceTree = "<group>"; };
+		D2AD08AF1FC6288D000C2122 /* TableViewSettings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewSettings.m; sourceTree = "<group>"; };
 		D2F604F01FBE7A9900C8B217 /* BudgetManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudgetManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F604F31FBE7A9900C8B217 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2F604F41FBE7A9900C8B217 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -106,9 +112,13 @@
 			children = (
 				D2F604F31FBE7A9900C8B217 /* AppDelegate.h */,
 				D2F604F41FBE7A9900C8B217 /* AppDelegate.m */,
+				D2AD08AC1FC59485000C2122 /* InitilisedTableView.m */,
+				D2AD08AB1FC59485000C2122 /* InitilisedTableView.h */,
 				D2F604F61FBE7A9900C8B217 /* ViewController.h */,
 				D2F604F71FBE7A9900C8B217 /* ViewController.m */,
 				D2F604F91FBE7A9900C8B217 /* Main.storyboard */,
+				D2AD08AE1FC6288D000C2122 /* TableViewSettings.h */,
+				D2AD08AF1FC6288D000C2122 /* TableViewSettings.m */,
 				D2F605251FBE99D800C8B217 /* SecondViewController.h */,
 				D2F605261FBE99D800C8B217 /* SecondViewController.m */,
 				D2F604FC1FBE7A9900C8B217 /* Assets.xcassets */,
@@ -271,8 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2F605271FBE99D800C8B217 /* SecondViewController.m in Sources */,
+				D2AD08AD1FC59485000C2122 /* InitilisedTableView.m in Sources */,
 				D2F604F81FBE7A9900C8B217 /* ViewController.m in Sources */,
 				D2F605031FBE7A9900C8B217 /* main.m in Sources */,
+				D2AD08B01FC6288D000C2122 /* TableViewSettings.m in Sources */,
 				D2F604F51FBE7A9900C8B217 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
