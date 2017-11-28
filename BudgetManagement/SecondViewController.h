@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "InitilisedTableView.h"
 
 @interface SecondViewController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
