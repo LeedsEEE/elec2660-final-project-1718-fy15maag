@@ -19,6 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.enterMonthYearLabel.text = @"Enter Month / Year";
+    
     UITableView *tableView = [[UITableView alloc]init];
     self.dataTabel = tableView;
     
@@ -26,6 +28,12 @@
     
     self.dataTabel.delegate = self;
     self.dataTabel.dataSource = self;
+    
+    
+    //Just for debugging now
+    SecondViewController *AccessPickers = [[SecondViewController alloc]init];
+    
+    //self.enterMonthYearLabel.text = [NSString stringWithFormat:@": %ld ", (long)AccessPickers.TableNumberOfRows];
 
 }
 
@@ -49,6 +57,21 @@
     return 2;
 }
 
+- (NSString *) tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger)section {
+    
+    NSString *sectionHeader;
+    
+    if (section == 0) {
+        sectionHeader = @"Income sources";
+    }
+    else if (section == 1) {
+        sectionHeader = @"Outcome Sources";
+    }
+    
+    return sectionHeader;
+}
+
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
@@ -65,7 +88,21 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 3;
+    NSInteger NumberOfRowsInSection = 0;
+    
+    if (section == 0) {
+    
+    //SecondViewController *AccessPickers = [[SecondViewController alloc]init];
+        
+    //NumberOfRowsInSection = AccessPickers.TableNumberOfRows;
+        
+        NumberOfRowsInSection = 3;
+    }
+    if (section == 1) {
+        NumberOfRowsInSection = 2;
+    }
+    
+    return NumberOfRowsInSection;
 }
 
 

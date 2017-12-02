@@ -7,14 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TableViewController.h"
+#import "SecondViewController.h"
 
-@interface InitilisedViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UILabel *halooLabel;
+@interface InitilisedViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField; // I might need this and the other two text fields as actions not outlet because they will be used when saving sheets.
+@property (weak, nonatomic) IBOutlet UITextField *monthTextField;
+@property (weak, nonatomic) IBOutlet UITextField *yearTextField;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *enterMonthYearLabel;
 @property (weak, nonatomic) IBOutlet UITableView *dataTabel;
 
+//@property (strong, nonatomic) SecondViewController *accessPickers;
+
+
+//@property NSString stringWithFormat:
 
 
 @end

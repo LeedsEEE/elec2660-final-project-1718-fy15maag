@@ -12,6 +12,8 @@
 
 @end
 
+NSArray *integersArray;
+
 @implementation SecondViewController
 
 - (void)viewDidLoad {
@@ -22,15 +24,20 @@
     self.NumberIncomePicker.delegate = self;
     self.NumberExpensesPicker.dataSource = self;
     self.NumberExpensesPicker.delegate = self;
-     
     
-    
+    self.NumberIncomeLabel.text = @"Select number of income sources";
+    self.NumberExpensesLabel.text = @"Select number of expenses sources";
+
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation
@@ -58,14 +65,43 @@
     
     if (pickerView == self.NumberExpensesPicker) {
         numberOfRows = 50;
+        //numberOfRows = integersArray.count;
     }
     
     return numberOfRows;
 }
 
-//
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    
+    NSString *returnedInteger;
+    
+    if (pickerView == self.NumberIncomePicker) {
+        
+        if (component == 0) {
+            returnedInteger = [NSString stringWithFormat: @"%u",row+1];
+        }
+    }
+    
+    if (pickerView == self.NumberExpensesPicker) {
+        if (component == 0) {
+            returnedInteger = [NSString stringWithFormat: @"%u", row+1];
+        }
+    }
+    
+    return returnedInteger;
+}
 
 
 - (IBAction)InitiliseTableButton:(UIButton *)sender {
 }
+
+/*
+-(void) TableNumberRowsMethod:(int)amount {
+    
+    //self.resistor.firstSignificantFigure = [self.fourBandPicker selectedRowInComponent:0];
+    
+    self.TableNumberOfRows = [self.NumberIncomePicker selectedRowInComponent:0];
+}
+*/
+
 @end
