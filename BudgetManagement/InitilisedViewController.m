@@ -21,19 +21,61 @@
     
     self.enterMonthYearLabel.text = @"Enter Month / Year";
     
-    UITableView *tableView = [[UITableView alloc]init];
-    self.dataTabel = tableView;
-    
-    // just keep these two, same as for picker views in the implementaion of "FourBandViewController"
-    
+                           
     self.dataTabel.delegate = self;
     self.dataTabel.dataSource = self;
     
     
-    //Just for debugging now
-    SecondViewController *AccessPickers = [[SecondViewController alloc]init];
+    /*
+    self.numberOfRows = accessPickers.incomeRows;
+    NSLog(@"Current rows = %ld", self.numberOfRows);
+    */
+    
+    /*
+    SecondViewController *accessPickers = [[SecondViewController alloc]init];
+    [accessPickers SavedPickerValue];
+    */
+    
+    SharedDataClass *data = [SharedDataClass SharedData];
+    NSLog(@"shared rows = %ld", data.NumberOfRows);
+    
+   // NSInteger *testInteger = data.NumberOfRows;
+    
+  // [accessPickers savedPickerValue];
+   
+    /*
+    UIPickerView *pickerView = [[UIPickerView alloc]init];
+    NSInteger *row;
+    NSInteger *component;
+    
+    pickerView = accessPickers.NumberIncomePicker;
+    row = [accessPickers.NumberIncomePicker selectedRowInComponent:0] +1;
+    component = 0;
+     */
+    
+    //[accessPickers pickerViewdidSelectRowinComponent];
+    
+   // [accessPickers pickerView:(UIPickerView *) didSelectRow:(NSInteger) inComponent:(NSInteger)];
+    
+    
+    //NSLog(@"ljfdf value %ld", [accessPickers.NumberIncomePicker selectedRowInComponent:0]);
+    
+    //SecondViewController *accessPickers = [[SecondViewController alloc]init];
+    
+    //NSLog (@"current number rows = %ld" , self.numberOfRows);
+    
+    //UITableView *dataTabel = [[UITableView alloc]init]; //I think I dont need this here because I already defined this in the header
+    
+    //_NumberOfRowsInSection = 1; //just an initial value
+   // SecondViewController *AccessPickers = [[SecondViewController alloc]init]; //An object to access data in the SecondViewController (selected number of income/outcome sources from picker)
     
     //self.enterMonthYearLabel.text = [NSString stringWithFormat:@": %ld ", (long)AccessPickers.TableNumberOfRows];
+    
+
+    
+    //NSLog (@"Income rows = %ld", (long) accessPickers.incomeRows);
+    
+   // NSLog (@"Testing picker = %ld", (long) for this to be done I need to add another DidSelectedRow here for the testPicker (y2ni b8ol if (pickcerView == self.testPicker) then self.NumberOfRowsInSection = self.incomeRows selectedRowInComponent
 
 }
 
@@ -54,7 +96,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 2;
+    return 3; //Income,outcome sources. And net balance
 }
 
 - (NSString *) tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger)section {
@@ -64,16 +106,53 @@
     if (section == 0) {
         sectionHeader = @"Income sources";
     }
-    else if (section == 1) {
+    if (section == 1) {
         sectionHeader = @"Outcome Sources";
     }
-    
+    if (section == 2) {
+        //sectionHeader = [NSString stringWithFormat:@"Net balance = %ld", calculation.netBalance; calculation will be an object for a NSObject class "Calculations" netBalance will be integer in Calculations that is calculated using a method called getCalculations which will calculate net balacnce and percentages.
+        sectionHeader = @"Net balance = ";
+    }
     return sectionHeader;
+}
+
+
+/*
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    self.pickerView = _accessPickers.NumberIncomePicker; // so I might also delete the one in the header which is named pickerView
+    self.numberOfRows = [_pickerView selectedRowInComponent:0];
+    
+}
+ */
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    // I think if I have another table View I should add if (tableView == self.dataTable ) { ....} but because it`s the only table I dont need to do this
+    
+    NSInteger *NumberOfRowsInSection =1;
+    
+    
+    //SecondViewController *AccessPickers = [[SecondViewController alloc]init];
+    
+    if (section == 0) {
+        
+        
+        NumberOfRowsInSection = 2;
+    }
+    if (section == 1) {
+        
+        
+        NumberOfRowsInSection = self.rowsFromPicker;
+    }
+    
+    return NumberOfRowsInSection;
 }
 
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    
     
     
     UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"cellText" forIndexPath:indexPath];
@@ -86,23 +165,10 @@
     
 }
 
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    NSInteger NumberOfRowsInSection = 0;
-    
-    if (section == 0) {
-    
-    //SecondViewController *AccessPickers = [[SecondViewController alloc]init];
-        
-    //NumberOfRowsInSection = AccessPickers.TableNumberOfRows;
-        
-        NumberOfRowsInSection = 3;
-    }
-    if (section == 1) {
-        NumberOfRowsInSection = 2;
-    }
-    
-    return NumberOfRowsInSection;
+//Not sure about this method yet
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the specified item to be editable.
+     return YES;
 }
 
 

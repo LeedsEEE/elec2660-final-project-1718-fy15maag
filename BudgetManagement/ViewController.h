@@ -13,6 +13,7 @@
 - (IBAction)StartButton:(UIButton *)sender;
 - (IBAction)CurrencyConvertoButton:(UIButton *)sender;
 - (IBAction)SavedSheetsButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UITextView *welcomeText;
 
 @end
 

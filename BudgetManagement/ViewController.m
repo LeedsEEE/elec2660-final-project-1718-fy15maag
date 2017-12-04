@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    _welcomeText.text = @"Welcome to the budget manager app. In this application you will be able to create your own table .... Press start to implement table. ";
 }
 
 

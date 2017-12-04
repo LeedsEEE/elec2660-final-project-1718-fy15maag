@@ -12,9 +12,11 @@
 
 @end
 
-NSArray *integersArray;
+
 
 @implementation SecondViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,9 +29,17 @@ NSArray *integersArray;
     
     self.NumberIncomeLabel.text = @"Select number of income sources";
     self.NumberExpensesLabel.text = @"Select number of expenses sources";
-
+    
+  /*
+   In viewDidLoad, we create a shared instance of our data class
+   MyDataClass *data = [MyDataClass sharedInstance];
+   */
+    
+   // SharedDataClass *data = [SharedDataClass sharedData];
+   // self.data = [[SharedDataClass alloc]init];
+    
+    
 }
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -91,17 +101,60 @@ NSArray *integersArray;
     return returnedInteger;
 }
 
+/*
+-(int) SavedPickerValue {
+    
+    
+    SharedDataClass *data = [SharedDataClass SharedData];
+    
+    data.NumberOfRows = [self.NumberIncomePicker selectedRowInComponent:0]+1;
+    
+    NSLog(@"shared Income rows method= %ld", data.NumberOfRows);
+    
+    return data.NumberOfRows;
+}
+*/
 
-- (IBAction)InitiliseTableButton:(UIButton *)sender {
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    
+    SharedDataClass *data = [SharedDataClass SharedData];
+        
+    data.NumberOfRows = [self.NumberIncomePicker selectedRowInComponent:0]+1;
+        
+        NSLog(@"Income rows = %ld ", [_NumberIncomePicker selectedRowInComponent:0]+1);
+        
+        NSLog(@"shared Income rows method= %ld", data.NumberOfRows);
+    
+    //[self SavedPickerValue];
+    
+    if (pickerView == _NumberIncomePicker) {
+      
+        data.testString = @"khdkd";
+        NSLog(@" %@", data.testString);
+        
+    }
+    
+    if (pickerView == _NumberExpensesPicker) {
+        NSLog(@"expense rows %ld", [_NumberExpensesPicker selectedRowInComponent:0]+1);
+    }
+    
+    
 }
 
-/*
+
+- (IBAction)InitiliseTableButton:(UIButton *)sender {
+    
+    }
+
+    
+    /*
 -(void) TableNumberRowsMethod:(int)amount {
     
     //self.resistor.firstSignificantFigure = [self.fourBandPicker selectedRowInComponent:0];
     
     self.TableNumberOfRows = [self.NumberIncomePicker selectedRowInComponent:0];
 }
-*/
-
+ */
+    
 @end

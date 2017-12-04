@@ -8,23 +8,25 @@
 
 #import <UIKit/UIKit.h>
 #import "SecondViewController.h"
+#import "SharedDataClass.h"
 
 
-@interface InitilisedViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+@interface InitilisedViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIPickerViewDelegate,UIPickerViewAccessibilityDelegate, UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField; // I might need this and the other two text fields as actions not outlet because they will be used when saving sheets.
 @property (weak, nonatomic) IBOutlet UITextField *monthTextField;
 @property (weak, nonatomic) IBOutlet UITextField *yearTextField;
-
-
 @property (weak, nonatomic) IBOutlet UILabel *enterMonthYearLabel;
-@property (weak, nonatomic) IBOutlet UITableView *dataTabel;
+
+
+@property (weak, nonatomic) IBOutlet UITableView *dataTabel; //until now I`m not using this. No I`m absolutely using it!
 
 //@property (strong, nonatomic) SecondViewController *accessPickers;
+//@property NSInteger NumberOfRowsInSection;
 
 
-//@property NSString stringWithFormat:
-
+@property NSInteger numberOfRows;
+@property NSInteger rowsFromPicker;
 
 @end
 
