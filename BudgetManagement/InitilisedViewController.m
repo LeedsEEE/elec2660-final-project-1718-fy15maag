@@ -25,58 +25,14 @@
     self.dataTabel.delegate = self;
     self.dataTabel.dataSource = self;
     
-    
-    /*
-    self.numberOfRows = accessPickers.incomeRows;
-    NSLog(@"Current rows = %ld", self.numberOfRows);
-    */
-    
-    /*
-    SecondViewController *accessPickers = [[SecondViewController alloc]init];
-    [accessPickers SavedPickerValue];
-    */
+    //To test passing data correctrly between the views:
     
     SharedDataClass *data = [SharedDataClass SharedData];
-    NSLog(@"shared rows = %ld", data.NumberOfRows);
     
-   // NSInteger *testInteger = data.NumberOfRows;
+    NSLog(@"shared income rows = %ld", data.NumberOfIncomeRows);
+    NSLog(@"Shared expence rows = %ld", data.NumberOfExpenceRows);
     
-  // [accessPickers savedPickerValue];
    
-    /*
-    UIPickerView *pickerView = [[UIPickerView alloc]init];
-    NSInteger *row;
-    NSInteger *component;
-    
-    pickerView = accessPickers.NumberIncomePicker;
-    row = [accessPickers.NumberIncomePicker selectedRowInComponent:0] +1;
-    component = 0;
-     */
-    
-    //[accessPickers pickerViewdidSelectRowinComponent];
-    
-   // [accessPickers pickerView:(UIPickerView *) didSelectRow:(NSInteger) inComponent:(NSInteger)];
-    
-    
-    //NSLog(@"ljfdf value %ld", [accessPickers.NumberIncomePicker selectedRowInComponent:0]);
-    
-    //SecondViewController *accessPickers = [[SecondViewController alloc]init];
-    
-    //NSLog (@"current number rows = %ld" , self.numberOfRows);
-    
-    //UITableView *dataTabel = [[UITableView alloc]init]; //I think I dont need this here because I already defined this in the header
-    
-    //_NumberOfRowsInSection = 1; //just an initial value
-   // SecondViewController *AccessPickers = [[SecondViewController alloc]init]; //An object to access data in the SecondViewController (selected number of income/outcome sources from picker)
-    
-    //self.enterMonthYearLabel.text = [NSString stringWithFormat:@": %ld ", (long)AccessPickers.TableNumberOfRows];
-    
-
-    
-    //NSLog (@"Income rows = %ld", (long) accessPickers.incomeRows);
-    
-   // NSLog (@"Testing picker = %ld", (long) for this to be done I need to add another DidSelectedRow here for the testPicker (y2ni b8ol if (pickcerView == self.testPicker) then self.NumberOfRowsInSection = self.incomeRows selectedRowInComponent
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,33 +73,20 @@
 }
 
 
-/*
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    
-    self.pickerView = _accessPickers.NumberIncomePicker; // so I might also delete the one in the header which is named pickerView
-    self.numberOfRows = [_pickerView selectedRowInComponent:0];
-    
-}
- */
-
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+   
+    SharedDataClass *data = [SharedDataClass SharedData];
     
-    // I think if I have another table View I should add if (tableView == self.dataTable ) { ....} but because it`s the only table I dont need to do this
-    
-    NSInteger *NumberOfRowsInSection =1;
-    
-    
-    //SecondViewController *AccessPickers = [[SecondViewController alloc]init];
+    NSInteger *NumberOfRowsInSection =0; //give it an initial value
     
     if (section == 0) {
         
-        
-        NumberOfRowsInSection = 2;
+        NumberOfRowsInSection = data.NumberOfIncomeRows;
     }
+    
     if (section == 1) {
         
-        
-        NumberOfRowsInSection = self.rowsFromPicker;
+        NumberOfRowsInSection = data.NumberOfExpenceRows;
     }
     
     return NumberOfRowsInSection;

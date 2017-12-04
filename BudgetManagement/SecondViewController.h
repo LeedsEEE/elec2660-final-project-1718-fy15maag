@@ -29,13 +29,6 @@
 
 - (IBAction)InitiliseTableButton:(UIButton *)sender; // This button takes to a new table view, where number of sections = 3 (Income sources, expenses sources, net balance). Number of rows in each section = numberIncomePicker (or numberIncomeExpenses) + 1 . Where additional one is for total income or expenses.
 
-//@property (strong, nonatomic) SharedDataClass *data;
-
-- (int) SavedPickerValue;
-
-//+(InitilisedViewController *) accessPickers; is it this way how we define objects in the interface?! No! this is is a class method. And basically it should be in the class its self (in the InitilisedViewContoller)
-
-
 
 
 @end

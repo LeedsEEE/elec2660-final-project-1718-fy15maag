@@ -101,44 +101,20 @@
     return returnedInteger;
 }
 
-/*
--(int) SavedPickerValue {
-    
-    
-    SharedDataClass *data = [SharedDataClass SharedData];
-    
-    data.NumberOfRows = [self.NumberIncomePicker selectedRowInComponent:0]+1;
-    
-    NSLog(@"shared Income rows method= %ld", data.NumberOfRows);
-    
-    return data.NumberOfRows;
-}
-*/
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
     
     SharedDataClass *data = [SharedDataClass SharedData];
-        
-    data.NumberOfRows = [self.NumberIncomePicker selectedRowInComponent:0]+1;
-        
-        NSLog(@"Income rows = %ld ", [_NumberIncomePicker selectedRowInComponent:0]+1);
-        
-        NSLog(@"shared Income rows method= %ld", data.NumberOfRows);
     
-    //[self SavedPickerValue];
+    data.NumberOfIncomeRows = [self.NumberIncomePicker selectedRowInComponent:0]+1;
     
-    if (pickerView == _NumberIncomePicker) {
-      
-        data.testString = @"khdkd";
-        NSLog(@" %@", data.testString);
+    data.NumberOfExpenceRows = [self.NumberExpensesPicker selectedRowInComponent:0]+1;
+    
+    //NSLog... are testing commands
+    NSLog(@"Income rows = %ld", data.NumberOfIncomeRows);
+    NSLog(@"Expence rows = %ld", data.NumberOfExpenceRows);
         
-    }
-    
-    if (pickerView == _NumberExpensesPicker) {
-        NSLog(@"expense rows %ld", [_NumberExpensesPicker selectedRowInComponent:0]+1);
-    }
-    
     
 }
 

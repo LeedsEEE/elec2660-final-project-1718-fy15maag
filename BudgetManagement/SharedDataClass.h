@@ -12,9 +12,10 @@
 
 @property NSInteger *NumberOfRows; //Number of rows is a variable to be shared between different views. It will be chosen from pickers in the SecondViewController , then passed to the InitilisedViewController to indicate number of rows of table.
 
-@property (nonatomic, copy) NSString *testString;
-+ (SharedDataClass *) SharedData;
+@property NSInteger *NumberOfIncomeRows;
+@property NSInteger *NumberOfExpenceRows;
 
-//+  (SharedDataClass *)  sharedInstance; //This is a class method
++ (SharedDataClass *) SharedData; //A class method
+
 
 @end

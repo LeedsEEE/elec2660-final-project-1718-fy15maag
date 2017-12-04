@@ -11,7 +11,8 @@
 @implementation SharedDataClass
 
 @synthesize NumberOfRows = _NumberOfRows;
-@synthesize testString = _testString;
+@synthesize NumberOfIncomeRows = _NumberOfIncomeRows;
+@synthesize NumberOfExpenceRows = _NumberOfExpenceRows;
 
 static SharedDataClass *_SharedData;
 
