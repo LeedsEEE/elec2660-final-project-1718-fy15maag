@@ -111,9 +111,11 @@
     
     data.NumberOfExpenceRows = [self.NumberExpensesPicker selectedRowInComponent:0]+1;
     
-    //NSLog... are testing commands
+    //NSLog... commands are for debugging
+    /*
     NSLog(@"Income rows = %ld", data.NumberOfIncomeRows);
     NSLog(@"Expence rows = %ld", data.NumberOfExpenceRows);
+     */
         
     
 }

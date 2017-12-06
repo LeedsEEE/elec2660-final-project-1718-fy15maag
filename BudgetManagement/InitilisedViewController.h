@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SecondViewController.h"
 #import "SharedDataClass.h"
+#import "FillTableViewController.h"
 
 
 @interface InitilisedViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIPickerViewDelegate,UIPickerViewAccessibilityDelegate, UIPickerViewDataSource>
@@ -27,6 +28,8 @@
 
 @property NSInteger numberOfRows;
 @property NSInteger rowsFromPicker;
+
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 
 @end
 

@@ -15,6 +15,12 @@
 @property NSInteger *NumberOfIncomeRows;
 @property NSInteger *NumberOfExpenceRows;
 
+@property NSInteger i;
+@property NSString *SharedIncomeText; //to be shared between FillTableViewContoller and InitilisedTableViewController
+
+
+@property NSMutableArray *IncomeSourcesArray; //In this array; the income sources texts ("fees", "loans",...) will be added to.
+
 + (SharedDataClass *) SharedData; //A class method
 
 

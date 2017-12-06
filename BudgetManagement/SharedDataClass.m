@@ -13,6 +13,10 @@
 @synthesize NumberOfRows = _NumberOfRows;
 @synthesize NumberOfIncomeRows = _NumberOfIncomeRows;
 @synthesize NumberOfExpenceRows = _NumberOfExpenceRows;
+@synthesize IncomeSourcesArray = _IncomeSourcesArray;
+@synthesize i = _i;
+@synthesize SharedIncomeText = _SharedIncomeText;
+
 
 static SharedDataClass *_SharedData;
 

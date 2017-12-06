@@ -32,7 +32,15 @@
     NSLog(@"shared income rows = %ld", data.NumberOfIncomeRows);
     NSLog(@"Shared expence rows = %ld", data.NumberOfExpenceRows);
     
+    NSLog(@"last shared text is: %@", data.SharedIncomeText);
+    //data.IncomeSourcesArray = [NSMutableArray array];
+   // NSLog(@"First element in the IncomeSourcesArray is %@", data.IncomeSourcesArray[0]);
    
+    /*
+     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *sharedIncomeText = [defaults objectForKey:@"incomeText"];
+    self.testLabel.text = sharedIncomeText;
+     */
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,8 +105,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     
-    
-    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"cellText" forIndexPath:indexPath];
+    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"cellText" forIndexPath:indexPath]; //I might create this cell in the heaser and here say sel.cell = [tableView deq.....];
     
     
     cell.textLabel.text = @"Here is the Cell";
