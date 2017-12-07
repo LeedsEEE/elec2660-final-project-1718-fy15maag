@@ -316,9 +316,11 @@
                                 <rect key="frame" x="217" y="504" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="backGroundControl:" destination="RXf-mH-553" eventType="touchUpInside" id="1FX-H9-xMa"/>
-                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bX9-bJ-0fk">
+                                <rect key="frame" x="27" y="509" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -330,6 +332,7 @@
                     <connections>
                         <outlet property="expenceText" destination="VDO-eZ-WSA" id="rvM-sT-6Oi"/>
                         <outlet property="incomeText" destination="tfC-fJ-WRe" id="fPl-hA-ROZ"/>
+                        <outlet property="startButton" destination="bX9-bJ-0fk" id="QSM-6J-qbd"/>
                         <outlet property="testButton" destination="Yal-yo-U7J" id="xY2-bL-8ZM"/>
                         <outlet property="typeAmountLabel1" destination="sl5-Gs-id4" id="Uiz-dE-aoy"/>
                         <outlet property="typeAmountLabel2" destination="6aP-Gi-t2W" id="9IU-2R-fSd"/>

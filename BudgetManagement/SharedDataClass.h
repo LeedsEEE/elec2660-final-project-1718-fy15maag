@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface SharedDataClass : NSObject
 
@@ -15,11 +16,14 @@
 @property NSInteger *NumberOfIncomeRows;
 @property NSInteger *NumberOfExpenceRows;
 
-@property NSInteger i;
+@property NSInteger i; //will be used as a counter or index
 @property NSString *SharedIncomeText; //to be shared between FillTableViewContoller and InitilisedTableViewController
 
 
 @property NSMutableArray *IncomeSourcesArray; //In this array; the income sources texts ("fees", "loans",...) will be added to.
+
+@property (weak, nonatomic) IBOutlet UIButton *SharedButton;
+
 
 + (SharedDataClass *) SharedData; //A class method
 

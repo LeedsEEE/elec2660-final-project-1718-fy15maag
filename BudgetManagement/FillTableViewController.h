@@ -27,7 +27,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *incomeText;
 @property (weak, nonatomic) IBOutlet UITextField *expenceText;
 
-//- (IBAction)expenceText:(UITextField *)sender forEvent:(UIEvent *)event;
 
 - (IBAction)backGroundControl:(UIControl *)sender;
 
@@ -35,8 +34,13 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *testButton;
 
--(void) loopMethod;
 
 
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+
+
+
+
+@property (strong, nonatomic) FillTableViewController *object; //Not sure if I really need it
 
 @end

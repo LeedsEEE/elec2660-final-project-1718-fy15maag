@@ -32,15 +32,24 @@
     NSLog(@"shared income rows = %ld", data.NumberOfIncomeRows);
     NSLog(@"Shared expence rows = %ld", data.NumberOfExpenceRows);
     
-    NSLog(@"last shared text is: %@", data.SharedIncomeText);
-    //data.IncomeSourcesArray = [NSMutableArray array];
-   // NSLog(@"First element in the IncomeSourcesArray is %@", data.IncomeSourcesArray[0]);
-   
+    // To check if the income sources array is correcly sent to thie view:
+    NSLog(@"Current element in array is: %@ at index %d", data.IncomeSourcesArray[0], 0);
+    
+    NSLog(@"Current element in array is: %@ at index %d", data.IncomeSourcesArray[1], 1);
+    NSLog(@"Current element in array is: %@ at index %d", data.IncomeSourcesArray[2], 2);
+    
+    
+
     /*
      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *sharedIncomeText = [defaults objectForKey:@"incomeText"];
     self.testLabel.text = sharedIncomeText;
      */
+    
+    //FillTableViewController *object = [[FillTableViewController alloc]init];
+    
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,16 +110,34 @@
 }
 
 
-
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     
     UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"cellText" forIndexPath:indexPath]; //I might create this cell in the heaser and here say sel.cell = [tableView deq.....];
     
+    SharedDataClass *data = [SharedDataClass SharedData];
     
+    //data.i = data.i - 3;
+    if (indexPath.section == 0) { //income sourcses section
+        
+        //NSLog(@"indexPath.section is %ld, .row is %ld", indexPath.section, indexPath.row); //to understand how idex path change
+        
+        if (indexPath.row == data.i) {
+            cell.textLabel.text = data.SharedIncomeText;
+            cell.detailTextLabel.text = @"amount";
+        }
+    }
+    
+    if (indexPath.section == 1) {
+        cell.textLabel.text = @"To be edited later";
+        cell.detailTextLabel.text = @"amount";
+    }
+    //NSLog(@"section %ld, row %ld " , indexPath.section, indexPath.row);
+    
+    /*
     cell.textLabel.text = @"Here is the Cell";
     cell.detailTextLabel.text = @"Here are the details text";
-    
+    */
     return cell;
     
 }

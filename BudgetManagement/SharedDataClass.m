@@ -16,12 +16,15 @@
 @synthesize IncomeSourcesArray = _IncomeSourcesArray;
 @synthesize i = _i;
 @synthesize SharedIncomeText = _SharedIncomeText;
+@synthesize SharedButton = _SharedButton;
 
 
 static SharedDataClass *_SharedData;
 
 - (id) init {
     if (self = [super init]) {
+     
+        self.IncomeSourcesArray = [NSMutableArray array];
     }
     return self;
 }

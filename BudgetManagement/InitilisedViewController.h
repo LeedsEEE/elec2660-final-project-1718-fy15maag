@@ -31,6 +31,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
 
+
 @end
 
 //perfect; so the data source and delegate methods will be added in the implementaion of this class; because I already got a yellow warning message about some missed methods and when I pressed fix; the numberOfRowsInsSection and ... appeared.
