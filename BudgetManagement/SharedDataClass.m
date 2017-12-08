@@ -33,6 +33,7 @@
 
 @synthesize TotalIncome = _TotalIncome;
 @synthesize TotalExpence = _TotalExpence;
+@synthesize NetBalance = _NetBalance;
 
 
 static SharedDataClass *_SharedData;

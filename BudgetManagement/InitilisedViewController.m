@@ -19,19 +19,39 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-
-    
-                           
     self.dataTabel.delegate = self;
     self.dataTabel.dataSource = self;
     
-    //To test passing data correctrly between the views:
-    
     SharedDataClass *data = [SharedDataClass SharedData];
     
+    NSLog(@" %ld", data.IncomeAmountArray.count);
     
-    NSLog(@"shared income rows = %ld", data.IncomeSourcesArray.count);
-    NSLog(@"Shared expence rows = %ld", data.ExpenceSourcesArray.count);
+
+   // a primary way of calculating the sum of integers or floats in array:
+    float totalIncome=0;
+    for (int c=0; c<(data.IncomeAmountArray.count); c++) {
+        
+        totalIncome = totalIncome + [data.IncomeAmountArray[c] floatValue];
+        
+    }
+    data.TotalIncome = totalIncome;
+    NSLog(@"Total income %.3f = ",data.TotalIncome);
+    
+    float totalExpence = 0;
+    for (int c=0; c<(data.ExpenceAmountArray.count); c++) {
+        
+        totalExpence = totalExpence + [data.ExpenceAmountArray[c] floatValue];
+        
+    }
+    data.TotalExpence= totalExpence;
+    NSLog(@"Total expence  = %.3f  ",data.TotalExpence);
+    
+    data.NetBalance = data.TotalIncome - data.TotalExpence;
+    NSLog(@"Net balance is %.3f", data.NetBalance);
+    
+    //To test passing data correctrly between the views:
+    //NSLog(@"shared income rows = %ld", data.IncomeSourcesArray.count);
+    //NSLog(@"Shared expence rows = %ld", data.ExpenceSourcesArray.count);
     
     // To check if the income sources array is correcly sent to thie view:
   
@@ -74,12 +94,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    NSLog(@"no error");
     
     return 3; //Income,outcome sources. And net balance
 }
 
 - (NSString *) tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger)section {
+    
     
     NSString *sectionHeader;
     
@@ -90,8 +110,10 @@
         sectionHeader = @"Outcome Sources";
     }
     if (section == 2) {
-        //sectionHeader = [NSString stringWithFormat:@"Net balance = %ld", calculation.netBalance; calculation will be an object for a NSObject class "Calculations" netBalance will be integer in Calculations that is calculated using a method called getCalculations which will calculate net balacnce and percentages.
-        sectionHeader = @"Net balance = ";
+        
+        SharedDataClass *data = [SharedDataClass SharedData];
+        sectionHeader = [NSString stringWithFormat:@"Net balance = %.3f", data.NetBalance];
+        
     }
     return sectionHeader;
 }
@@ -106,7 +128,8 @@
     
     if (section == 0) {
 
-       NumberOfRowsInSection =data.IncomeSourcesArray.count; //perfect
+       NumberOfRowsInSection =data.IncomeSourcesArray.count; //last row for total income amount
+        
 
         NSLog(@"number of rows in sectio 0 = %ld", NumberOfRowsInSection);
     }
@@ -116,7 +139,10 @@
         NumberOfRowsInSection = data.ExpenceSourcesArray.count; //no error
 
     }
-    NSLog(@"error here");
+    
+    NSLog(@"Number of rows in section = %ld",NumberOfRowsInSection);
+    //Section 2 contains just net balance (it needs no rows)
+    
     return NumberOfRowsInSection;
 }
 
@@ -146,6 +172,7 @@
         
         cell.detailTextLabel.text = [NSString stringWithFormat:@" %.2f (%@)", [data.ExpenceAmountArray[indexPath.row] floatValue],data.SharedCurrency];
     }
+    
 //NSLog(@"section %ld, row %ld " , indexPath.section, indexPath.row);
 /*
 cell.textLabel.text = @"Here is the Cell";

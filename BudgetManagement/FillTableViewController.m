@@ -70,7 +70,7 @@
     data.IncomeSourcesArray[data.i] = data.SharedIncomeText;
     data.IncomeAmountArray[data.i] = data.SharedIncomeObject;
     
-    NSLog(@"first element in amount array is %@ at index: %u", data.IncomeAmountArray[0], 0);
+    //NSLog(@"first element in amount array is %@ at index: %u", data.IncomeAmountArray[0], 0);
    // NSLog(@"last element in amount array is %@ at index: %ld", data.IncomeAmountArray[data.i], data.i);
     self.incomeText.text = nil;
     self.incomeAmountText.text = nil;
@@ -150,7 +150,7 @@
 
 - (IBAction)backGroundControl:(UIControl *)sender {
     
-   NSLog(@"Back ground is pressed");
+   NSLog(@"Background is pressed");
     
     
     if ([self.incomeText isFirstResponder]) {
