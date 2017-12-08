@@ -35,6 +35,10 @@
 @synthesize TotalExpence = _TotalExpence;
 @synthesize NetBalance = _NetBalance;
 
+@synthesize SavedYear = _SavedYear;
+@synthesize SavedUserName = _SavedUserName;
+@synthesize SavedMonth = _SavedMonth;
+
 
 static SharedDataClass *_SharedData;
 

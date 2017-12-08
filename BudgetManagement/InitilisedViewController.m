@@ -24,7 +24,11 @@
     
     SharedDataClass *data = [SharedDataClass SharedData];
     
-    //NSLog(@" %ld", data.IncomeAmountArray.count);
+    self.textLabel.text = [NSString stringWithFormat:@"This personal paper statement is for %@ , shows incomes and outlays for %@ %@ ", data.SavedUserName, data.SavedMonth, data.SavedYear];
+    self.textLabel.textAlignment =0; //left alignment
+    self.textLabel.textColor = [UIColor darkGrayColor];
+    
+    
     
 
    // a primary way of calculating the sum of integers or floats in array:

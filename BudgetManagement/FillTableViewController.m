@@ -143,7 +143,10 @@
     
     SharedDataClass *data = [SharedDataClass SharedData];
     data.SharedCurrency = self.currencyTextField.text;
-    
+    data.SavedMonth = self.monthTextField.text;
+    data.SavedUserName = self.nameTextField.text;
+    data.SavedYear = self.yearTextField.text;
+
 }
 
 

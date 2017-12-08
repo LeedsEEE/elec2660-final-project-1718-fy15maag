@@ -60,6 +60,10 @@
 //^^Could be defined just locally (within InitilisedTableView)
 
 
+//To save user name, month and year entered in a UITextField and add it to a text view with the table view, so when saving paper in the app; paper saved with user name, month and year
+@property NSString *SavedUserName;
+@property NSString *SavedMonth; // added as NSString just for simplicity;
+@property NSString *SavedYear;
 
 
 

@@ -17,6 +17,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UITableView *dataTabel;
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 
 - (IBAction)saveDataButton:(UIButton *)sender; // To be implemented. If it`s pressed; table will be saved for later uses (even if the app is closed)
 
