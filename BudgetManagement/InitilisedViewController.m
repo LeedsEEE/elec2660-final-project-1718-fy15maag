@@ -29,14 +29,19 @@
     
     SharedDataClass *data = [SharedDataClass SharedData];
     
-    NSLog(@"shared income rows = %ld", data.NumberOfIncomeRows);
-    NSLog(@"Shared expence rows = %ld", data.NumberOfExpenceRows);
+    
+    NSLog(@"shared income rows = %ld", data.IncomeSourcesArray.count);
+    NSLog(@"Shared expence rows = %ld", data.ExpenceSourcesArray.count);
     
     // To check if the income sources array is correcly sent to thie view:
-    NSLog(@"Current element in array is: %@ at index %d", data.IncomeSourcesArray[0], 0);
+  
+    NSLog(@"first element in amount array is %@ at index: %u", data.IncomeAmountArray[0], 0);
+     NSLog(@"last element in amount array is %@ at index: %ld", data.IncomeAmountArray[(data.i)-1], data.i-1); //basically last elemnt is at index = data.i -1 because after we pressed button for the last time data.i increased by 1
     
-    NSLog(@"Current element in array is: %@ at index %d", data.IncomeSourcesArray[1], 1);
-    NSLog(@"Current element in array is: %@ at index %d", data.IncomeSourcesArray[2], 2);
+    //NSLog(@"Current element in array is: %@ at index %d", data.IncomeSourcesArray[1], 1);
+    
+    //NSLog(@"Size of the array is %ld", [data.IncomeSourcesArray count]); got it right
+   // NSLog(@"Current element in array is: %@ at index %d", data.IncomeSourcesArray[2], 2);
     
     
 
@@ -69,6 +74,8 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
+    NSLog(@"no error");
+    
     return 3; //Income,outcome sources. And net balance
 }
 
@@ -94,18 +101,22 @@
    
     SharedDataClass *data = [SharedDataClass SharedData];
     
-    NSInteger *NumberOfRowsInSection =0; //give it an initial value
+    NSInteger NumberOfRowsInSection =0; //give it an initial value
+   
     
     if (section == 0) {
-        
-        NumberOfRowsInSection = data.NumberOfIncomeRows;
+
+       NumberOfRowsInSection =data.IncomeSourcesArray.count; //perfect
+
+        NSLog(@"number of rows in sectio 0 = %ld", NumberOfRowsInSection);
     }
     
     if (section == 1) {
         
-        NumberOfRowsInSection = data.NumberOfExpenceRows;
+        NumberOfRowsInSection = data.ExpenceSourcesArray.count; //no error
+
     }
-    
+    NSLog(@"error here");
     return NumberOfRowsInSection;
 }
 
@@ -113,34 +124,39 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     
-    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"cellText" forIndexPath:indexPath]; //I might create this cell in the heaser and here say sel.cell = [tableView deq.....];
+    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"cellText" forIndexPath:indexPath];
     
     SharedDataClass *data = [SharedDataClass SharedData];
     
-    //data.i = data.i - 3;
-    if (indexPath.section == 0) { //income sourcses section
+    if (indexPath.section == 0 ) {
         
-        //NSLog(@"indexPath.section is %ld, .row is %ld", indexPath.section, indexPath.row); //to understand how idex path change
+       // NSLog(@"last element in amount array is %@ at index: %ld", data.IncomeAmountArray[(data.i)-1], data.i-1);
         
-        if (indexPath.row == data.i) {
-            cell.textLabel.text = data.SharedIncomeText;
-            cell.detailTextLabel.text = @"amount";
-        }
+        cell.textLabel.text = data.IncomeSourcesArray [indexPath.row];
+        
+        
+        cell.detailTextLabel.text = [NSString stringWithFormat:@" %.2f", [data.IncomeAmountArray[indexPath.row] floatValue]];
     }
     
+
     if (indexPath.section == 1) {
-        cell.textLabel.text = @"To be edited later";
-        cell.detailTextLabel.text = @"amount";
+        
+        cell.textLabel.text = data.ExpenceSourcesArray [indexPath.row];
+        
+        
+        cell.detailTextLabel.text = [NSString stringWithFormat:@" %.2f", [data.ExpenceAmountArray[indexPath.row] floatValue]];
     }
-    //NSLog(@"section %ld, row %ld " , indexPath.section, indexPath.row);
-    
-    /*
-    cell.textLabel.text = @"Here is the Cell";
-    cell.detailTextLabel.text = @"Here are the details text";
-    */
-    return cell;
-    
+//NSLog(@"section %ld, row %ld " , indexPath.section, indexPath.row);
+/*
+cell.textLabel.text = @"Here is the Cell";
+ cell.detailTextLabel.text = @"Here are the details text";
+ */
+return cell;
+
 }
+
+
+
 
 //Not sure about this method yet
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

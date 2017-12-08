@@ -20,12 +20,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *typeAmountLabel2;
 
 - (IBAction)sendButton1:(UIButton *)sender;
+//@property (weak, nonatomic) IBOutlet UIButton *button1Title;
+
 - (IBAction)sendButton2:(UIButton *)sender;
 - (IBAction)showTableButton:(UIButton *)sender;
 
 
 @property (weak, nonatomic) IBOutlet UITextField *incomeText;
+@property (weak, nonatomic) IBOutlet UITextField *incomeAmountText;
+
 @property (weak, nonatomic) IBOutlet UITextField *expenceText;
+@property (weak, nonatomic) IBOutlet UITextField *expenceAmountText;
 
 
 - (IBAction)backGroundControl:(UIControl *)sender;
@@ -36,10 +41,7 @@
 
 
 
-@property (weak, nonatomic) IBOutlet UIButton *startButton;
-
-
-
+//@property (weak, nonatomic) IBOutlet UIButton *startButton;
 
 @property (strong, nonatomic) FillTableViewController *object; //Not sure if I really need it
 

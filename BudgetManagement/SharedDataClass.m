@@ -10,13 +10,24 @@
 
 @implementation SharedDataClass
 
-@synthesize NumberOfRows = _NumberOfRows;
+
 @synthesize NumberOfIncomeRows = _NumberOfIncomeRows;
 @synthesize NumberOfExpenceRows = _NumberOfExpenceRows;
+
 @synthesize IncomeSourcesArray = _IncomeSourcesArray;
+@synthesize IncomeAmountArray = _IncomeAmountArray;
+@synthesize ExpenceSourcesArray = _ExpenceSourcesArray;
+@synthesize ExpenceAmountArray = _ExpenceAmountArray;
+
 @synthesize i = _i;
+@synthesize u = _u;
 @synthesize SharedIncomeText = _SharedIncomeText;
-@synthesize SharedButton = _SharedButton;
+@synthesize SharedIncomeFloat = _SharedIncomeFloat;
+@synthesize SharedIncomeObject = _SharedIncomeObject;
+@synthesize SharedExpenceText = _SharedExpenceText;
+@synthesize SharedExpenceFloat = _SharedExpenceFloat;
+@synthesize SharedExpenceObject = _SharedExpenceObject;
+
 
 
 static SharedDataClass *_SharedData;
@@ -25,6 +36,11 @@ static SharedDataClass *_SharedData;
     if (self = [super init]) {
      
         self.IncomeSourcesArray = [NSMutableArray array];
+        self.IncomeAmountArray = [NSMutableArray array];
+        self.ExpenceSourcesArray = [NSMutableArray array];
+        self.ExpenceAmountArray = [NSMutableArray array];
+        
+        
     }
     return self;
 }
