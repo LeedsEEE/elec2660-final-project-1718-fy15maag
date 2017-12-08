@@ -45,7 +45,7 @@ static SharedDataClass *_SharedData;
         self.IncomeAmountArray = [NSMutableArray array];
         self.ExpenceSourcesArray = [NSMutableArray array];
         self.ExpenceAmountArray = [NSMutableArray array];
-        
+    
         
     }
     return self;

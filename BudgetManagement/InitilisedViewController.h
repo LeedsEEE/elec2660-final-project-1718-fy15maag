@@ -18,7 +18,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *dataTabel;
 
+- (IBAction)saveDataButton:(UIButton *)sender; // To be implemented. If it`s pressed; table will be saved for later uses (even if the app is closed)
 
+- (IBAction)clearDataButton:(UIButton *)sender; //Clear data in the table
 
 
 /* Not used any more
