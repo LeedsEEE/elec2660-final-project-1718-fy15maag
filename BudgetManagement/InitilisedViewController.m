@@ -95,26 +95,34 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     
-    return 3; //Income,outcome sources. And net balance
+    return 5; //Income sources,total income amount, outcome sources, total outcome sources And net balance.
 }
 
 - (NSString *) tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger)section {
-    
-    
+
     NSString *sectionHeader;
+    SharedDataClass *data = [SharedDataClass SharedData];
     
     if (section == 0) {
-        sectionHeader = @"Income sources";
+        sectionHeader = @"Income sources:";
     }
+    
     if (section == 1) {
-        sectionHeader = @"Outcome Sources";
+        sectionHeader = [NSString stringWithFormat:@"Total income = %.3f (%@)", data.TotalIncome, data.SharedCurrency];
     }
     if (section == 2) {
+        sectionHeader = @"Outlays section:";
+    }
+    if (section == 3) {
+        sectionHeader = [NSString stringWithFormat:@"Total outlay = %.3f (%@)", data.TotalExpence, data.SharedCurrency];
+    }
+    if (section == 4) {
         
         SharedDataClass *data = [SharedDataClass SharedData];
         sectionHeader = [NSString stringWithFormat:@"Net balance = %.3f", data.NetBalance];
         
     }
+    
     return sectionHeader;
 }
 
@@ -126,22 +134,20 @@
     NSInteger NumberOfRowsInSection =0; //give it an initial value
    
     
-    if (section == 0) {
+    if (section == 0) { //income sources
 
        NumberOfRowsInSection =data.IncomeSourcesArray.count; //last row for total income amount
         
-
-        NSLog(@"number of rows in sectio 0 = %ld", NumberOfRowsInSection);
+        //NSLog(@"number of rows in sectio 0 = %ld", NumberOfRowsInSection);
     }
     
-    if (section == 1) {
+    if (section == 2) { //outlays
         
         NumberOfRowsInSection = data.ExpenceSourcesArray.count; //no error
 
     }
     
-    NSLog(@"Number of rows in section = %ld",NumberOfRowsInSection);
-    //Section 2 contains just net balance (it needs no rows)
+    //other sections need only the section header (no rows), so their NumberOfRowsInSection = 0 (initalised given value at start of method)
     
     return NumberOfRowsInSection;
 }
@@ -152,6 +158,7 @@
     
     UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"cellText" forIndexPath:indexPath];
     
+   
     SharedDataClass *data = [SharedDataClass SharedData];
     
     if (indexPath.section == 0 ) {
@@ -165,7 +172,7 @@
     }
     
 
-    if (indexPath.section == 1) {
+    if (indexPath.section == 2) {
         
         cell.textLabel.text = data.ExpenceSourcesArray [indexPath.row];
         
