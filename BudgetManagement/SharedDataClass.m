@@ -21,6 +21,7 @@
 
 @synthesize i = _i;
 @synthesize u = _u;
+
 @synthesize SharedIncomeText = _SharedIncomeText;
 @synthesize SharedIncomeFloat = _SharedIncomeFloat;
 @synthesize SharedIncomeObject = _SharedIncomeObject;
@@ -28,6 +29,10 @@
 @synthesize SharedExpenceFloat = _SharedExpenceFloat;
 @synthesize SharedExpenceObject = _SharedExpenceObject;
 
+@synthesize SharedCurrency = _SharedCurrency;
+
+@synthesize TotalIncome = _TotalIncome;
+@synthesize TotalExpence = _TotalExpence;
 
 
 static SharedDataClass *_SharedData;

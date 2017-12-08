@@ -140,6 +140,10 @@
 }
 
 - (IBAction)showTableButton:(UIButton *)sender {
+    
+    SharedDataClass *data = [SharedDataClass SharedData];
+    data.SharedCurrency = self.currencyTextField.text;
+    
 }
 
 

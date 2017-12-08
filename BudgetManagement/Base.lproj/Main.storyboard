@@ -532,9 +532,9 @@
                     </view>
                     <connections>
                         <outlet property="currencyTextField" destination="gvo-vZ-yeU" id="1vM-xv-zhI"/>
-                        <outlet property="expenceAmountText" destination="nDo-db-DLt" id="xDA-Kn-TAM"/>
+                        <outlet property="expenceAmountText" destination="uHY-Va-sd2" id="lXi-ND-Wka"/>
                         <outlet property="expenceText" destination="VDO-eZ-WSA" id="rvM-sT-6Oi"/>
-                        <outlet property="incomeAmountText" destination="uHY-Va-sd2" id="hmZ-9E-DW2"/>
+                        <outlet property="incomeAmountText" destination="nDo-db-DLt" id="AOq-Td-4N0"/>
                         <outlet property="incomeText" destination="vzz-SF-Tet" id="fms-EW-c33"/>
                         <outlet property="monthTextField" destination="BS7-1h-vH5" id="I6T-PG-8Ey"/>
                         <outlet property="monthYearLabel" destination="zBy-po-Wa4" id="6im-Sc-Ool"/>
@@ -603,43 +603,6 @@
                                     <outlet property="delegate" destination="UhT-fE-Nnu" id="zYw-Cy-5sS"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivc-2g-AjW">
-                                <rect key="frame" x="30" y="130" width="42" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bcv-aI-Pw1">
-                                <rect key="frame" x="27" y="87" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="UhT-fE-Nnu" id="dd2-RZ-2vq"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zy0-TH-ayU">
-                                <rect key="frame" x="107" y="151" width="45" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <connections>
-                                    <outlet property="delegate" destination="UhT-fE-Nnu" id="Wjg-bU-hTX"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dWW-dY-alZ">
-                                <rect key="frame" x="171" y="151" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <connections>
-                                    <outlet property="delegate" destination="UhT-fE-Nnu" id="HD6-Fa-spa"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPi-Vg-SPU">
                                 <rect key="frame" x="60" y="520" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
@@ -652,13 +615,6 @@
                                 <rect key="frame" x="62" y="506" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pageControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crC-OE-paG">
-                                <rect key="frame" x="231" y="105" width="42" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -676,11 +632,6 @@
                     </view>
                     <connections>
                         <outlet property="dataTabel" destination="hJp-H0-6Xt" id="fDQ-C3-UDX"/>
-                        <outlet property="enterMonthYearLabel" destination="ivc-2g-AjW" id="Uci-AS-cF5"/>
-                        <outlet property="monthTextField" destination="Zy0-TH-ayU" id="jOT-cI-hTc"/>
-                        <outlet property="nameTextField" destination="bcv-aI-Pw1" id="P9A-Uy-cKK"/>
-                        <outlet property="testLabel" destination="crC-OE-paG" id="SOj-Wo-Ing"/>
-                        <outlet property="yearTextField" destination="dWW-dY-alZ" id="wMW-J8-nyJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzc-oz-Eu9" userLabel="First Responder" sceneMemberID="firstResponder"/>

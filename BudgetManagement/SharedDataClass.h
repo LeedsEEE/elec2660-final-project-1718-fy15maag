@@ -10,29 +10,42 @@
 
 @interface SharedDataClass : NSObject
 
+//This way of creating a class to share data between views is taken from a blog for Dr.Evans:/* https://eencae.wordpress.com/ios-tutorials/other/passing-data-between-multiple-views/ */
 
-//Number of rows is a variable to be shared between different views. It will be chosen from pickers in the SecondViewController , then passed to the InitilisedViewController to indicate number of rows for a section in the table.
-@property NSInteger *NumberOfIncomeRows;
-@property NSInteger *NumberOfExpenceRows;
 
-@property NSInteger i; //will be used as a counter or index inside IBActions, where if the buttom is pressed we want to keep this value unchanged even if we changed the view.
-@property NSInteger u; //Another counter
+#pragma marks: Main data for this app to be shared between views:
 
-//to be = UITextFilds.text in the FillTableView. And then shared between FillTableViewContoller and InitilisedTableViewController
-@property NSString *SharedIncomeText;
-@property float SharedIncomeFloat; // Income amount in a float form to be used in calculations
-@property NSNumber *SharedIncomeObject; // Above float but converted to NSNumber object to allow adding it into array.
+
+@property NSString *SharedIncomeText; // UITextField.text entered by user and sent to a table view in another view controller.
+@property float SharedIncomeFloat; // Entered income amount in a float form to be used in calculations
+@property NSNumber *SharedIncomeObject; // Same as the above float but converted to NSNumber object to allow adding it into array.
 
 @property NSString *SharedExpenceText;
 @property float SharedExpenceFloat;
 @property NSNumber *SharedExpenceObject;
 
-@property NSMutableArray *IncomeSourcesArray; //In this array; the income sources texts ("salaries", "investments",...) will be added to.
+@property NSString *SharedCurrency; //SharedCurrency = any currency typed into UITextField by user.
 
-@property NSMutableArray *IncomeAmountArray; //In this array; amount of each income source is added (floats).
+//Arrays that will store above data:
 
-@property NSMutableArray *ExpenceSourcesArray; // Expence type is to be added here ("school fees", "taxes" ...)
-@property NSMutableArray *ExpenceAmountArray; //Amount 
+@property NSMutableArray *IncomeSourcesArray; //Includes income sources texts ("salaries", "investments",...).
+@property NSMutableArray *IncomeAmountArray; //Includes amount of each income source.
+@property NSMutableArray *ExpenceSourcesArray; // Expence texts are to be added here ("school fees", "taxes" ...)
+@property NSMutableArray *ExpenceAmountArray; //Amount of each expence
+
+//The below inteegers (i,u) are defined in such a class to be used as counters or index path inside IBActions. Where if a button is pressed we want to add a new object into the array at new index, and keep this value unchanged even if we moved to another view. Check FillTableViewController class to see how these two integers are used within IBAction.
+@property NSInteger i;
+@property NSInteger u;
+
+#pragma marks: number of rows for a section in the table view
+//Number of rows is a variable to be shared between different views. It will be equal to size of array that is filled by user whenever he add a text into UITextFields.
+//Previousely; nubmer of rows was to be indicated at the start from pickers in the SecondViewController , then passed to the InitilisedViewController. But then it`s found that it`s more practical to just say: number of rwos = size of array.
+@property NSInteger *NumberOfIncomeRows;
+@property NSInteger *NumberOfExpenceRows;
+
+@property float TotalIncome; // Sum of each individual income amount
+@property float TotalExpence; // Sum of each individual expence amount
+
 
 + (SharedDataClass *) SharedData; //A class method
 

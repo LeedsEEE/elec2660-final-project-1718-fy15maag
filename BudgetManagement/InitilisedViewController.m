@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.enterMonthYearLabel.text = @"Enter Month / Year";
+
     
                            
     self.dataTabel.delegate = self;
@@ -135,7 +135,7 @@
         cell.textLabel.text = data.IncomeSourcesArray [indexPath.row];
         
         
-        cell.detailTextLabel.text = [NSString stringWithFormat:@" %.2f", [data.IncomeAmountArray[indexPath.row] floatValue]];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@" %.2f ( %@ )", [data.IncomeAmountArray[indexPath.row] floatValue], data.SharedCurrency];
     }
     
 
@@ -144,7 +144,7 @@
         cell.textLabel.text = data.ExpenceSourcesArray [indexPath.row];
         
         
-        cell.detailTextLabel.text = [NSString stringWithFormat:@" %.2f", [data.ExpenceAmountArray[indexPath.row] floatValue]];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@" %.2f (%@)", [data.ExpenceAmountArray[indexPath.row] floatValue],data.SharedCurrency];
     }
 //NSLog(@"section %ld, row %ld " , indexPath.section, indexPath.row);
 /*
