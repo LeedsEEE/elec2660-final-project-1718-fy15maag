@@ -18,10 +18,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.nameTextField.delegate = self;
+    self.monthTextField.delegate = self;
+    self.yearTextField.delegate = self;
+    self.currencyTextField.delegate = self;
     self.incomeText.delegate = self;
     self.incomeAmountText.delegate = self;
     self.expenceText.delegate = self;
     self.expenceAmountText.delegate = self;
+    
+    //self.typeAmountLabel1.text = [NSString stringWithFormat:@"Enter amount (%@)", self.currencyTextField.text];
+    //self.typeAmountLabel2.text = [NSString stringWithFormat:@"Enter amount (%@)", self.currencyTextField.text];
     
 }
 

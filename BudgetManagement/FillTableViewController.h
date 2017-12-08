@@ -12,6 +12,8 @@
 
 @interface FillTableViewController : UIViewController <UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *monthYearLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *typeIncomeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeAmountLabel1;
@@ -25,6 +27,10 @@
 - (IBAction)sendButton2:(UIButton *)sender;
 - (IBAction)showTableButton:(UIButton *)sender;
 
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *monthTextField;
+@property (weak, nonatomic) IBOutlet UITextField *yearTextField;
+@property (weak, nonatomic) IBOutlet UITextField *currencyTextField;
 
 @property (weak, nonatomic) IBOutlet UITextField *incomeText;
 @property (weak, nonatomic) IBOutlet UITextField *incomeAmountText;
@@ -37,12 +43,6 @@
 
 @property(nonatomic) UIKeyboardAppearance keyboardAppearance; //This property lets you distinguish between the default text entry inside your application and text entry inside an alert panel. The default value for this property is UIKeyboardAppearanceDefault.
 
-@property (weak, nonatomic) IBOutlet UIButton *testButton;
-
-
-
-//@property (weak, nonatomic) IBOutlet UIButton *startButton;
-
-@property (strong, nonatomic) FillTableViewController *object; //Not sure if I really need it
+@property (strong, nonatomic) FillTableViewController *object; //I might not need it
 
 @end

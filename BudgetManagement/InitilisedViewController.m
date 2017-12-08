@@ -35,8 +35,8 @@
     
     // To check if the income sources array is correcly sent to thie view:
   
-    NSLog(@"first element in amount array is %@ at index: %u", data.IncomeAmountArray[0], 0);
-     NSLog(@"last element in amount array is %@ at index: %ld", data.IncomeAmountArray[(data.i)-1], data.i-1); //basically last elemnt is at index = data.i -1 because after we pressed button for the last time data.i increased by 1
+    //NSLog(@"first element in amount array is %@ at index: %u", data.IncomeAmountArray[0], 0);
+     //NSLog(@"last element in amount array is %@ at index: %ld", data.IncomeAmountArray[(data.i)-1], data.i-1); //basically last elemnt is at index = data.i -1 because after we pressed button for the last time data.i increased by 1
     
     //NSLog(@"Current element in array is: %@ at index %d", data.IncomeSourcesArray[1], 1);
     
